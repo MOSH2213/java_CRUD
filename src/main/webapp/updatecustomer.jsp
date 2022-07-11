@@ -22,7 +22,7 @@
 	<form action="" method="post">
 		<!-- the values inside <%%> are the variables from 13-19 in this file -->
 		<!-- in the input tags the values relatively get stored and shows to the customer accordingly -->
-		Customer <input type="text" name="cusid" value="<%= id%>"/><br />
+		Customer <input type="text" name="cusid" value="<%= id%> " readonly/><br />
 		Name <input type="text" name="name" value="<%= name%>"/><br />
 		email <input type="text" name="email" value="<%= email%>"/><br />
 		phone Number <input type="text" name="phone" value="<%= phone%>"/><br />
