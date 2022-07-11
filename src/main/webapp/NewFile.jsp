@@ -11,7 +11,7 @@
 </head>
 <body>
   <c:forEach var="cus" items="${cusDetails}">
-  		
+  		<!-- variables relevantly stores the values coming from ${cus.xxxxxx} -->
   		<c:set var="id" value="${cus.id}"/>
   		<c:set var="name" value="${cus.name}"/>
   		<c:set var="email" value="${cus.email}"/>
@@ -41,7 +41,7 @@
   			</tbody>
   		</table>
     </c:forEach>
-    
+    <!-- from the following tag <c:url> redirects to the updatecustomer.jsp with all the values in <c:param> -->
     <c:url value="updatecustomer.jsp" var="cusupdate">
     	<c:param name="id" value="${id}"/>
     	<c:param name="name" value="${name}"/>
@@ -50,7 +50,9 @@
     	<c:param name="username" value="${username}"/>
     	<c:param name="password" value="${password}"/>
     </c:url>
+    <!-- on line 45 the var attribute is tken below i the 54th line -->
     <a href="${cusupdate}">
+    	<!-- when update_my_data is clicked will be redirected to updatecustomer.jsp file -->
     	<input type="button" name="update" value="update_my_data"/>
     </a>
 	

@@ -10,6 +10,7 @@
 <body>
 
 	<%
+		//the values inside the getParameters are from the name attributes from NewFile.jsp from line 46-51 ;
 		String id=request.getParameter("id");
 		String name=request.getParameter("name");
 		String email=request.getParameter("email");
@@ -19,11 +20,13 @@
 	%>
 
 	<form action="" method="post">
+		<!-- the values inside <%%> are the variables from 13-19 in this file -->
+		<!-- in the input tags the values relatively get stored and shows to the customer accordingly -->
 		Customer <input type="text" name="cusid" value="<%= id%>"/><br />
 		Name <input type="text" name="name" value="<%= name%>"/><br />
 		email <input type="text" name="email" value="<%= email%>"/><br />
 		phone Number <input type="text" name="phone" value="<%= phone%>"/><br />
-		username <input type="text" name="uname" value="<%= userName%>"/><br />
+		userName <input type="text" name="uname" value="<%= userName%>"/><br />
 		password <input type="text" name="uname" value="<%= password%>"/><br />
 		<input type="submit" class="" value="update"  name="submit"/>
 		
