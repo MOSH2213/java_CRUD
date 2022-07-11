@@ -1,20 +1,41 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+    
+
+
+<%@ page import="jakarta.servlet.http.HttpServlet"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
 </head>
 <body>
   <c:forEach var="cus" items="${cusDetails}">
-  		<h1>${$cus.id}</h1>
-  		<h1>${$cus.name}</h1>
-  		<h1>${$cus.email}</h1>
-  		<h1>${$cus.phone}</h1>
-  		<h1>${$cus.username}</h1>
-  		<h1>${$cus.password}</h1>
-   </c:forEach>
+  		
+  		<table>
+  			<thead>
+  				<tr>
+  					<th>ID</th>
+  					<th>NAME</th>
+  					<th>EMAIL</th>
+  					<th>PHONE</th>
+  					<th>SID</th>
+  					<th>PASSWORD</th>
+  				</tr>
+  			</thead>
+  			<tbody>
+  				<tr>
+  					<td>${cus.id}</td>
+  					<td>${cus.name}</td>
+  					<td>${cus.email}</td>
+  					<td>${cus.phone}</td>
+  					<td>${cus.username}</td>
+  					<td>${cus.password}</td>
+  				</tr>
+  			</tbody>
+  		</table>
+    </c:forEach>
+
+  	
 </body>
 </html>

@@ -21,6 +21,13 @@
     
   </head>
   <body>
+    <c:forEach var="cus" items="${cusDetails}">
+  		<h1>${cus.id}</h1>
+  		<h1>${cus.name}</h1>
+  		<h1>${cus.email}</h1>
+  		<h1>${cus.phone}</h1>
+  		<h1>${cus.username}</h1>
+  		<h1>${cus.password}</h1>
   
   <div class="site-wrap">
     <header class="site-navbar" role="banner">
@@ -109,7 +116,7 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <span class="icon-check_circle display-3 text-success"></span>
-            <h2 class="display-3 text-black">Thank you!</h2>
+            <h2 class="display-3 text-black">${cus.id}</h2>
             <p class="lead mb-5">You order was successfuly completed.</p>
             <p><a href="shop.html" class="btn btn-sm btn-primary">Back to shop</a></p>
           </div>
@@ -191,7 +198,7 @@
       </div>
     </footer>
   </div>
-
+  </c:forEach>
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>
   <script src="js/popper.min.js"></script>

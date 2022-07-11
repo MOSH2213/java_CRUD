@@ -38,8 +38,7 @@ public class CustomerDbUtil {
 				Customer c = new Customer(id,name,email,phone,userU,passwordU);
 				cus.add(c);
 			}
-			else
-				System.out.print("ERRRO");
+
 			
 		}
 		catch(Exception e){
