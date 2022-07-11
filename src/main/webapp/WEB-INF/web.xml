@@ -8,7 +8,6 @@
     <servlet-name>login</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>customerinsert</servlet-name>
     <servlet-class>com.customer.cusinsert</servlet-class>
@@ -17,5 +16,14 @@
     <servlet-name>customerinsert</servlet-name>
     <url-pattern>/customerinsert</url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <description></description>
+    <display-name>updateCustomerServelet</display-name>
+    <servlet-name>updateCustomerServelet</servlet-name>
+    <servlet-class>com.customer.updateCustomerServelet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateCustomerServelet</servlet-name>
+    <url-pattern>/updateCustomerServelet</url-pattern>
+  </servlet-mapping>
 </web-app>

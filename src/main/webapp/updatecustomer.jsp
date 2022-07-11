@@ -19,7 +19,7 @@
 		String password=request.getParameter("password");
 	%>
 
-	<form action="" method="post">
+	<form action="updateCustomerServelet" method="post">
 		<!-- the values inside <%%> are the variables from 13-19 in this file -->
 		<!-- in the input tags the values relatively get stored and shows to the customer accordingly -->
 		Customer <input type="text" name="cusid" value="<%= id%> " readonly/><br />
@@ -27,7 +27,7 @@
 		email <input type="text" name="email" value="<%= email%>"/><br />
 		phone Number <input type="text" name="phone" value="<%= phone%>"/><br />
 		userName <input type="text" name="uname" value="<%= userName%>"/><br />
-		password <input type="text" name="uname" value="<%= password%>"/><br />
+		password <input type="text" name="pass" value="<%= password%>"/><br />
 		<input type="submit" class="" value="update"  name="submit"/>
 		
 	</form>

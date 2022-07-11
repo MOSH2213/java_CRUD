@@ -74,4 +74,29 @@ public class CustomerDbUtil {
 		
 		return isSucess;
 	}
+	public static boolean updatecustomer(String id,String name,String email,String phone,String username,String password) {
+		
+		
+		boolean isSucess = false;
+		try {
+		
+			con=DBconnect.getConnection();
+			stmt=con.createStatement();
+			String sql="UPDATE customer SET name='"+name+"',email='"+email+"',phone='"+phone+"',username='"+username+"',password='"+password+"' WHERE id='"+id+"' ";
+			int sr=stmt.executeUpdate(sql);
+			
+			if(sr>0) {
+				isSucess=true;
+			}
+			else {
+				isSucess=false;
+			}
+			
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+				
+		return isSucess;
+	}
 }
