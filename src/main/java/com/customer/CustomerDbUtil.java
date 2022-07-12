@@ -99,4 +99,40 @@ public class CustomerDbUtil {
 				
 		return isSucess;
 	}
+	
+	public static List<Customer> getCustomerDetails(String id){
+		
+		String sid=id;
+		
+		int convertid=Integer.parseInt(sid);	
+		
+		ArrayList<Customer> cus = new ArrayList<>();
+		
+		try {
+			con =DBconnect.getConnection();
+			stmt=con.createStatement();
+			String sql="SELECT * FROM customer WHERE id='"+convertid+"'";
+			rs=stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				int Id= rs.getInt(1);
+				String name=rs.getString(2);
+				String email=rs.getString(3);
+				String phone=rs.getString(4);
+				String username=rs.getString(5);
+				String password=rs.getString(6);
+				
+				Customer c=new Customer(Id,name,email,phone,username,password);
+				cus.add(c);
+				
+			}
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+			
+		
+		return cus;
+		
+	}
 }

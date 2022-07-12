@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 
 
@@ -26,10 +27,17 @@ public class updateCustomerServelet extends HttpServlet {
 		boolean isTrue;
 		isTrue=CustomerDbUtil.updatecustomer(id, name, email, phone, username, password);
 		if(isTrue==true) {
-			RequestDispatcher dis= request.getRequestDispatcher("success.jsp");
+			
+			List<Customer> cusDetails=CustomerDbUtil.getCustomerDetails(id);
+			request.setAttribute("cusDetails", cusDetails);
+			
+			RequestDispatcher dis= request.getRequestDispatcher("NewFile.jsp");
 			dis.forward(request, response);
 		}
 		else {
+			List<Customer> cusDetails=CustomerDbUtil.getCustomerDetails(id);
+			request.setAttribute("cusDetails", cusDetails);
+			
 			RequestDispatcher dis=request.getRequestDispatcher("unsuccess.jsp");
 			dis.forward(request, response);
 		}

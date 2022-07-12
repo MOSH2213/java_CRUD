@@ -55,7 +55,6 @@
     	<!-- when update_my_data is clicked will be redirected to updatecustomer.jsp file -->
     	<input type="button" name="update" value="update_my_data"/>
     </a>
-	
   	
 </body>
 </html>
